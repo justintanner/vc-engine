@@ -1,12 +1,12 @@
 /**
- * Basic usage of vc-engine: create a project, add assets, write/read files.
+ * Basic usage of videocity-engine: create a project, add assets, write/read files.
  *
  * Run: npx tsx examples/basic-usage.ts
  */
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { createFs } from "vc-engine";
+import { createFs } from "videocity-engine";
 
 const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "videocity-basic-"));
 const projectsDir = path.join(tmpDir, "projects");

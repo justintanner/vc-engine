@@ -6,14 +6,14 @@
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { createFs } from "vc-engine";
+import { createFs } from "videocity-engine";
 
 const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "videocity-projects-"));
-const outputDir = path.join(tmpDir, "output");
-await fs.mkdir(outputDir);
+const projectsDir = path.join(tmpDir, "projects");
+await fs.mkdir(projectsDir);
 
 try {
-  const cfs = createFs({ outputDir });
+  const cfs = createFs({ projectsDir });
 
   // --- Create projects with custom slugs ---
   const projectA = await cfs.createProject("vacation-clips");
